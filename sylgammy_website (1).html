@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYLGAMMY | Kenyan Homes</title>
+  <meta name="description" content="Find your dream home in Kenya with Sylgammy. Explore houses and properties for sale.">
+  <style>
+    :root {
+      --navy: #102a43;
+      --gold: #d6a84f;
+      --cream: #f7f5ef;
+      --white: #fff;
+      --text: #243b53;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--text); background: var(--cream); line-height: 1.6; }
+    header { background: var(--navy); color: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .logo { font-size: 1.65rem; font-weight: 800; letter-spacing: 1.5px; }
+    .logo span { color: var(--gold); }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--gold); }
+    .hero { min-height: 520px; display: flex; align-items: center; padding: 70px 7%; color: white; background: linear-gradient(90deg, rgba(9,28,45,.88), rgba(9,28,45,.38)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85') center/cover; }
+    .hero-content { max-width: 650px; }
+    .eyebrow { color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.12; margin: 15px 0 20px; }
+    .hero p { font-size: 1.1rem; max-width: 540px; margin-bottom: 28px; }
+    .btn { display: inline-block; background: var(--gold); color: #102a43; padding: 13px 23px; border-radius: 5px; text-decoration: none; font-weight: 800; border: none; cursor: pointer; }
+    .btn:hover { background: #e5bd6a; }
+    .btn-outline { background: transparent; color: white; border: 2px solid white; margin-left: 10px; }
+    section { padding: 65px 7%; }
+    .section-head { text-align: center; margin-bottom: 35px; }
+    .section-head h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 8px; }
+    .search-panel { background: white; padding: 22px; border-radius: 10px; box-shadow: 0 8px 25px #102a4312; display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 14px; margin-top: -35px; position: relative; }
+    select, input { width: 100%; padding: 13px; border: 1px solid #d9e2ec; border-radius: 5px; font-size: 1rem; background: white; }
+    .properties { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .property-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 22px #102a4310; }
+    .property-card img { width: 100%; height: 230px; object-fit: cover; display: block; }
+    .property-info { padding: 20px; }
+    .property-info h3 { color: var(--navy); margin-bottom: 7px; }
+    .location { color: #627d98; font-size: .95rem; }
+    .price { color: #b17d20; font-size: 1.25rem; font-weight: 800; margin: 12px 0; }
+    .features { font-size: .92rem; color: #486581; margin-bottom: 16px; }
+    .property-info .btn { width: 100%; text-align: center; }
+    .about { background: var(--navy); color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .about h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 15px; }
+    .about img { width: 100%; border-radius: 10px; max-height: 380px; object-fit: cover; }
+    .contact { text-align: center; }
+    .contact h2 { color: var(--navy); font-size: 2.2rem; margin-bottom: 12px; }
+    .contact p { margin-bottom: 22px; }
+    footer { background: #091c2d; color: #d9e2ec; text-align: center; padding: 24px 7%; }
+    footer strong { color: var(--gold); }
+    .whatsapp-float { position: fixed; right: 20px; bottom: 20px; z-index: 10; background: #25d366; color: white; padding: 14px 18px; border-radius: 50px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 15px #0003; }
+    @media (max-width: 900px) {
+      .properties { grid-template-columns: repeat(2, 1fr); }
+      .search-panel { grid-template-columns: 1fr 1fr; }
+      .about { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { gap: 12px; }
+      .properties, .search-panel { grid-template-columns: 1fr; }
+      .hero { min-height: 460px; }
+      .btn-outline { margin: 10px 0 0; }
+      section { padding: 48px 5%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">SYL<span>GAMMY</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#properties">Properties</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to Sylgammy Kenyan Homes</div>
+        <h1>Find a Home<br>You'll Love.</h1>
+        <p>Discover beautiful houses and properties for sale across Kenya. Whether you're buying your first home or investing in property, Sylgammy helps you find the right place.</p>
+        <a class="btn" href="#properties">Explore Properties</a>
+        <a class="btn btn-outline" href="#contact">Contact Us</a>
+      </div>
+    </section>
+
+    <section style="padding-top: 0; padding-bottom: 25px;" aria-label="Property search">
+      <form class="search-panel" id="searchForm">
+        <select id="location" aria-label="Choose location">
+          <option value="">All locations in Kenya</option>
+          <option value="Nakuru">Nakuru</option>
+          <option value="Nairobi">Nairobi</option>
+          <option value="Kiambu">Kiambu</option>
+          <option value="Mombasa">Mombasa</option>
+          <option value="Eldoret">Eldoret</option>
+        </select>
+        <select id="type" aria-label="Property type">
+          <option value="">All property types</option>
+          <option value="Bungalow">Bungalow</option>
+          <option value="Maisonette">Maisonette</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Land">Land</option>
+        </select>
+        <select id="budget" aria-label="Budget">
+          <option value="">Any budget</option>
+          <option value="5000000">Up to KSh 5M</option>
+          <option value="10000000">Up to KSh 10M</option>
+          <option value="20000000">Up to KSh 20M</option>
+        </select>
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </section>
+
+    <section id="properties">
+      <div class="section-head">
+        <div class="eyebrow">Featured listings</div>
+        <h2>Explore Kenyan Homes</h2>
+        <p>Find a property that matches your lifestyle and budget.</p>
+      </div>
+      <div class="properties" id="propertyGrid">
+        <article class="property-card" data-location="Nakuru" data-type="Bungalow" data-price="8500000">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Modern bungalow with landscaped garden">
+          <div class="property-info">
+            <h3>Modern 3-Bedroom Bungalow</h3>
+            <div class="location">📍 Nakuru, Kenya</div>
+            <div class="price">KSh 8,500,000</div>
+            <div class="features">3 Bedrooms · 2 Bathrooms · Spacious compound</div>
+            <a class="btn" href="https://wa.me/254726696165?text=Hello%20Sylgammy%2C%20I%20am%20interested%20in%20the%203-bedroom%20bungalow%20in%20Nakuru." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="property-card" data-location="Nairobi" data-type="Apartment" data-price="6500000">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Contemporary apartment building">
+          <div class="property-info">
+            <h3>Stylish 2-Bedroom Apartment</h3>
+            <div class="location">📍 Nairobi, Kenya</div>
+            <div class="price">KSh 6,500,000</div>
+            <div class="features">2 Bedrooms · 2 Bathrooms · Secure parking</div>
+            <a class="btn" href="https://wa.me/254726696165?text=Hello%20Sylgammy%2C%20I%20am%20interested%20in%20the%202-bedroom%20apartment%20in%20Nairobi." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="property-card" data-location="Kiambu" data-type="Maisonette" data-price="14500000">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Large elegant maisonette home">
+          <div class="property-info">
+            <h3>Elegant 4-Bedroom Maisonette</h3>
+            <div class="location">📍 Kiambu, Kenya</div>
+            <div class="price">KSh 14,500,000</div>
+            <div class="features">4 Bedrooms · Ensuite · Family-friendly setting</div>
+            <a class="btn" href="https://wa.me/254726696165?text=Hello%20Sylgammy%2C%20I%20am%20interested%20in%20the%204-bedroom%20maisonette%20in%20Kiambu." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+          </div>
+        </article>
+      </div>
+      <p id="noResults" style="display:none; text-align:center; margin-top:24px;">No listings match your search. Please try different filters.</p>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <div class="eyebrow">Who we are</div>
+        <h2>Your Partner in Finding Kenyan Homes</h2>
+        <p>Sylgammy is dedicated to helping people discover houses and properties in Kenya. We aim to make the property search simple, transparent, and convenient—from exploring listings to contacting us for more information.</p>
+        <p style="margin-top:15px;">Your dream home could be one enquiry away.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Beautiful home exterior" onerror="this.src='https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80'">
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="eyebrow">Let's get in touch</div>
+      <h2>Ready to Find Your Dream Home?</h2>
+      <p>Contact Sylgammy for property details, viewing arrangements, and enquiries.</p>
+      <a class="btn" href="https://wa.me/254726696165?text=Hello%20Sylgammy%2C%20I%20would%20like%20to%20enquire%20about%20homes%20for%20sale%20in%20Kenya." target="_blank" rel="noopener">Chat with Us on WhatsApp</a>
+      <p style="margin-top:18px;">Phone / WhatsApp: <strong>0726 696 165</strong></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <strong>SYLGAMMY Kenyan Homes</strong>. All rights reserved.</p>
+    <p>Find your place. Build your future.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/254726696165?text=Hello%20Sylgammy%2C%20I%20am%20looking%20for%20a%20home%20in%20Kenya." target="_blank" rel="noopener" aria-label="Chat with Sylgammy on WhatsApp">WhatsApp</a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('searchForm');
+    const cards = Array.from(document.querySelectorAll('.property-card'));
+    const noResults = document.getElementById('noResults');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const location = document.getElementById('location').value;
+      const type = document.getElementById('type').value;
+      const budget = document.getElementById('budget').value;
+      let shown = 0;
+
+      cards.forEach(card => {
+        const matchesLocation = !location || card.dataset.location === location;
+        const matchesType = !type || card.dataset.type === type;
+        const matchesBudget = !budget || Number(card.dataset.price) <= Number(budget);
+        const visible = matchesLocation && matchesType && matchesBudget;
+        card.style.display = visible ? '' : 'none';
+        if (visible) shown++;
+      });
+
+      noResults.style.display = shown ? 'none' : 'block';
+      document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
